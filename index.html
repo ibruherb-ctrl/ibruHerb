@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ibruHerb | Herbs & Ayurvedic Medicine — Natural Wellness</title>
+<meta name="description" content="ibruHerb — Premium Herbs, Ayurvedic Medicines & Natural Supplements. 100% Pure & Authentic. FREE delivery across India. Call 9888604059">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/latin-600.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/latin-700.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/latin-400.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/latin-600.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/latin-700.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/latin-800.css" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f7f2; --card:#fffef9; --ink:#1a2e1a; --muted:#6b7a6b;
+  --green:#2d7a3e; --green2:#4a9d5c; --green-soft:#e6f2e8;
+  --gold:#b8862b; --gold2:#c9a24a; --gold-soft:#f3e5c6;
+  --line:#d6e0d6; --wa:#1fae55; --wa-dark:#128c46; --danger:#c0392b;
+  --sale:#d63a3a; --mrp:#8a8a8a;
+  --shadow:0 10px 30px rgba(26,46,26,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+img{display:block;max-width:100%}
+.wrap{max-width:1150px;margin:0 auto;padding:0 18px}
+.hidden{display:none!important}
+.topbar{background:var(--ink);color:#e9f2e9;font-size:13px;text-align:center;padding:8px 12px;letter-spacing:.3px}
+.topbar b{color:var(--green2)}
+header{position:sticky;top:0;z-index:50;background:rgba(244,247,242,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;max-width:1150px;margin:0 auto}
+.brand{cursor:pointer}
+.brand h1{font-size:26px;letter-spacing:1px}
+.brand h1 span{color:var(--green)}
+.brand small{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.hd-right{display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end}
+.search{flex:1;max-width:430px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:11px 18px;font:inherit;font-size:14px;outline:none}
+.search:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(45,122,62,.15)}
+.cart-btn{position:relative;background:var(--ink);color:#e9f2e9;border:none;padding:11px 18px;border-radius:999px;font-weight:700;cursor:pointer;font-size:14px;flex-shrink:0}
+.cart-btn:hover{background:#0d1a0d}
+#cartCount{position:absolute;top:-7px;right:-4px;background:var(--green);color:#fff;min-width:22px;height:22px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 5px}
+@media(max-width:640px){.hd-right{width:100%;justify-content:stretch}.search{max-width:none}}
+.hero{position:relative;min-height:430px;display:flex;align-items:center;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,25,10,.82) 0%,rgba(10,25,10,.5) 55%,rgba(10,25,10,.2) 100%)}
+.hero-txt{position:relative;z-index:2;color:#fdf6e6;padding:60px 8px;max-width:640px}
+.hero-txt .kicker{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:var(--green2);font-weight:700}
+.hero-txt h2{font-size:clamp(30px,5vw,52px);line-height:1.12;margin:12px 0 14px}
+.hero-txt p{font-size:15px;opacity:.92;margin-bottom:22px}
+.btn{border:none;cursor:pointer;font-weight:800;border-radius:12px;padding:12px 20px;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;transition:.2s}
+.btn.green{background:linear-gradient(135deg,var(--green2),var(--green));color:#fff;box-shadow:0 6px 16px rgba(45,122,62,.35)}
+.btn.green:hover{transform:translateY(-2px)}
+.btn.dark{background:var(--ink);color:#e9f2e9}
+.btn.dark:hover{background:#0d1a0d}
+.btn.line{background:transparent;border:2px solid var(--line);color:var(--ink)}
+.btn.line:hover{border-color:var(--green)}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.wa:hover{background:var(--wa-dark)}
+.btn.big{width:100%;padding:15px;font-size:16px}
+.btn.small{padding:8px 14px;font-size:12.5px;border-radius:10px}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
+.usp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:26px 0 6px}
+.usp div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;font-size:13px;font-weight:700;box-shadow:var(--shadow)}
+.usp span{display:block;font-size:20px;margin-bottom:6px}
+.cat-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.cat-chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;cursor:pointer;color:var(--muted);transition:.15s}
+.cat-chip:hover{border-color:var(--green)}
+.cat-chip.on{background:var(--ink);color:var(--green2);border-color:var(--ink)}
+.sec-title{font-size:30px;margin:34px 0 4px}
+.sec-sub{color:var(--muted);margin-bottom:4px;font-size:14px}
+.section-header{display:flex;align-items:center;gap:12px;margin:40px 0 20px;padding-bottom:12px;border-bottom:2px solid var(--green-soft)}
+.section-header h2{font-size:26px;color:var(--ink);margin:0}
+.section-header .section-icon{font-size:28px}
+.section-header .section-count{background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;padding-bottom:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px)}
+.card-img{position:relative;aspect-ratio:1/1;background:#e8f0e8}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--green2);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.tag2{position:absolute;top:10px;right:10px;background:var(--green);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.card-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{font-size:19px}
+.desc{font-size:12.5px;color:var(--muted);line-height:1.5;flex:1}
+.vars{display:flex;gap:6px;flex-wrap:wrap}
+.var-pill{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font-size:11.5px;font-weight:800;cursor:pointer;color:var(--muted);transition:.15s}
+.var-pill:hover{border-color:var(--green)}
+.var-pill.on{background:var(--ink);color:var(--green2);border-color:var(--ink)}
+.price-block{display:flex;flex-direction:column;gap:2px}
+.price-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.price-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sale-price{font-size:20px;font-weight:800;color:var(--sale)}
+.mrp-price{font-size:13px;color:var(--mrp);text-decoration:line-through;font-weight:600}
+.discount-badge{background:var(--sale);color:#fff;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;letter-spacing:.5px}
+.wt{font-size:11.5px;color:var(--muted);background:var(--green-soft);padding:4px 9px;border-radius:999px}
+.sale-banner{position:absolute;bottom:10px;left:10px;background:var(--sale);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:999px;box-shadow:0 4px 12px rgba(214,58,58,.4)}
+.actions{display:flex;gap:8px;align-items:center}
+.actions .btn{flex:1}
+.stepper{display:flex;align-items:center;gap:10px;background:var(--green-soft);border-radius:10px;padding:6px 10px}
+.stepper button{width:28px;height:28px;border:none;border-radius:8px;background:var(--ink);color:#fff;font-size:16px;cursor:pointer}
+.stepper span{min-width:20px;text-align:center;font-weight:800}
+.ship-note{background:linear-gradient(135deg,#0d1a0d,#1a2e1a);color:#e9f2e9;border:1px solid #2d4a2d;border-radius:18px;padding:22px;margin:6px 0 46px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.ship-note b{color:var(--green2)}
+.ship-note .free-big{font-size:20px;font-weight:800;color:#7ee2a0}
+.addr-head{display:flex;justify-content:space-between;align-items:center;margin:4px 0 10px}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+.addr-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.addr-card{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;background:#fffef9;transition:.2s;align-items:flex-start}
+.addr-card:hover{border-color:var(--green2)}
+.addr-card.sel{border-color:var(--green);background:var(--green-soft);box-shadow:0 0 0 3px rgba(45,122,62,.15)}
+.addr-card strong{font-size:14px}
+.addr-card span{display:block;font-size:12.5px;color:var(--muted);line-height:1.5}
+.addr-card .tick{color:var(--green);font-weight:800;font-size:12px}
+.addr-del{border:none;background:none;color:var(--danger);cursor:pointer;font-size:15px;padding:4px}
+.empty-addr{font-size:12.5px;color:var(--muted);background:var(--green-soft);border:1px dashed var(--green2);border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.view{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.co-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;padding:34px 18px 60px;max-width:1050px;margin:0 auto}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.panel h2{font-size:24px;margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px;font:inherit;background:#fffef9;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sum-row{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.sum-row.total{border:none;font-size:17px;font-weight:800;color:var(--green);padding-top:12px}
+.sum-items{max-height:220px;overflow:auto;margin-bottom:8px}
+.free-tag{color:var(--wa);font-weight:800}
+.savings-row{background:var(--green-soft);border:1px dashed var(--green);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px;font-weight:700;color:var(--green);text-align:center}
+.pay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:34px 18px 60px;max-width:1000px;margin:0 auto}
+.qr-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:inline-block;margin:14px 0}
+.qr-box img{width:230px;height:230px}
+.upi-id{font-size:14px;background:var(--green-soft);border-radius:10px;padding:10px 14px;display:inline-block}
+.pay-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hint{font-size:12.5px;color:var(--muted);margin:12px 0}
+.order-pill{background:var(--ink);color:var(--green2);border-radius:999px;padding:8px 16px;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:10px}
+.success-box{max-width:560px;margin:0 auto;text-align:center;padding:60px 18px}
+.check{font-size:60px}
+.success-box h2{font-size:32px;margin:10px 0}
+#overlay{position:fixed;inset:0;background:rgba(10,25,10,.5);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+#overlay.on{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--bg);z-index:95;transform:translateX(105%);transition:.35s;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2)}
+#drawer.on{transform:none}
+.dr-head{display:flex;justify-content:space-between;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.dr-head button{border:none;background:var(--ink);color:#fff;width:34px;height:34px;border-radius:10px;cursor:pointer}
+#cartItems{flex:1;overflow:auto;padding:14px 18px}
+.ci{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px}
+.ci img{width:62px;height:62px;object-fit:cover;border-radius:10px}
+.ci-info{flex:1}
+.ci-info strong{font-size:13.5px;display:block}
+.ci-info>span{font-size:12px;color:var(--muted)}
+.ci-right{text-align:right;font-weight:800;font-size:13.5px}
+.ci-right .ci-mrp{font-size:11px;color:var(--mrp);text-decoration:line-through;font-weight:600;display:block;margin-top:2px}
+.ci-right .ci-sale{color:var(--sale)}
+.rm{border:none;background:none;color:var(--danger);cursor:pointer;font-size:14px;margin-top:6px}
+#cartFoot{padding:16px 18px;border-top:1px solid var(--line);background:var(--card)}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+footer{background:var(--ink);color:#d9e6d9;padding:40px 18px;margin-top:20px}
+.ft{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+footer h3{color:var(--green2);margin-bottom:10px;font-size:18px}
+footer p,footer a{font-size:13.5px;line-height:1.9;color:#d9e6d9;text-decoration:none}
+footer b{color:#fff}
+.ft-bottom{max-width:1150px;margin:26px auto 0;padding-top:16px;border-top:1px solid #2d4a2d;font-size:12px;text-align:center;color:#a4b8a4}
+.fab{position:fixed;bottom:20px;right:20px;z-index:80;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 8px 22px rgba(18,140,70,.45)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--ink);color:#e9f2e9;padding:12px 22px;border-radius:999px;font-weight:700;font-size:14px;z-index:120;transition:.35s;opacity:0}
+#toast.on{transform:translate(-50%,0);opacity:1}
+@media(max-width:860px){
+  .co-wrap,.pay-wrap{grid-template-columns:1fr}
+  .usp{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🌿 <b>FREE Delivery</b> across India — No Charges! &nbsp;•&nbsp; 📞 <b>9888604059</b> &nbsp;•&nbsp; 📍 Natural Wellness Store</div>
+
+<header>
+  <div class="hd">
+    <div class="brand" onclick="show('shop')">
+      <h1>ibru<span>Herb</span></h1>
+      <small>Herbs &amp; Ayurvedic Medicine</small>
+    </div>
+    <div class="hd-right">
+      <input id="searchInput" class="search" type="search" placeholder="🔍 Search herbs, medicines…" oninput="onSearch(this.value)">
+      <button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<section id="view-shop" class="view">
+  <div class="hero">
+    <img class="bg" src="https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/10aa41929-739d-4523-b0e0-9e2d43526f9c.png" onerror="imgFallback(this)" alt="ibruHerb herbs collection">
+    <div class="wrap"><div class="hero-txt">
+      <div class="kicker">Since Tradition • 100% Natural</div>
+      <h2>The Healing Power of Nature, Bottled for You.</h2>
+      <p>Pure herbs, authentic ayurvedic medicines &amp; natural supplements — crafted with ancient wisdom for modern wellness.  FREE delivery on every order, anywhere in India.</p>
+      <button class="btn green" onclick="document.getElementById('section-new').scrollIntoView({behavior:'smooth'})">🛍️ Shop The Collection</button>
+    </div></div>
+  </div>
+
+  <div class="wrap">
+    <div class="usp">
+      <div><span>🌱</span>100% Natural &amp; Pure</div>
+      <div><span>🏷️</span>Mega Sale — Up to 40% OFF on All Products</div>
+      <div><span>🚚</span>FREE Delivery — All India (₹0)</div>
+    </div>
+
+    <div id="catBar" class="cat-bar"></div>
+
+    <!-- NEW PRODUCTS SECTION -->
+    <div id="section-new"></div>
+    <div id="newProductsSection"></div>
+
+    <!-- BEST SELLING SECTION -->
+    <div id="section-best"></div>
+    <div id="bestSellingSection"></div>
+
+    <!-- ALL PRODUCTS SECTION -->
+    <div id="section-all"></div>
+    <div id="allProductsSection"></div>
+
+    <div class="ship-note">
+      <div>🎁 <span class="free-big">FREE DELIVERY OFFER</span><br>No delivery charges for anyone, anywhere in India!</div>
+      <div>💳 UPI: <b>9888604059@ybl</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="view-checkout" class="view hidden">
+  <div class="co-wrap">
+    <div class="panel">
+      <h2>🚚 Delivery Details</h2>
+
+      <div class="addr-head">
+        <span class="lbl">💾 Saved Addresses</span>
+        <button class="btn line small" onclick="newAddressForm()">+ Add New Address</button>
+      </div>
+      <div id="addrList" class="addr-list"></div>
+
+      <div class="field"><label>Full Name</label><input id="fName" placeholder="e.g. Rahim Khan"></div>
+      <div class="field"><label>Mobile Number</label><input id="fPhone" maxlength="10" placeholder="10-digit mobile number"></div>
+      <div class="field"><label>Delivery Address</label><textarea id="fAddr" rows="3" placeholder="House no, street, city / town"></textarea></div>
+      <div class="row2">
+        <div class="field"><label>State</label><select id="fState" onchange="renderCoSummary()"></select></div>
+        <div class="field"><label>PIN Code</label><input id="fPin" maxlength="6" placeholder="6-digit PIN"></div>
+      </div>
+      <button class="btn green big" onclick="proceedPayment()">💳 Proceed to Payment →</button>
+      <p class="hint">🎉 FREE delivery across India — ₹0 charges. Your address is saved on this device for faster checkout next time.</p>
+      <button class="btn line" onclick="show('shop')">← Continue Shopping</button>
+    </div>
+    <aside class="panel">
+      <h2>Order Summary</h2>
+      <div id="coSummary"></div>
+    </aside>
+  </div>
+</section>
+
+<section id="view-payment" class="view hidden">
+  <div class="pay-wrap">
+    <div class="panel">
+      <span class="order-pill" id="payOrderNo">IH-000000-0000</span>
+      <h2>Scan &amp; Pay via UPI</h2>
+      <div class="qr-box"><img id="qrImg" alt="UPI Payment QR Code"></div>
+      <p class="upi-id">UPI ID: <b id="upiIdText"></b></p>
+      <div class="pay-btns">
+        <a id="upiLinkBtn" class="btn green" href="#">📲 Pay via UPI App</a>
+        <button id="copyUpiBtn" class="btn line" onclick="copyUpi()">📋 Copy UPI Link</button>
+      </div>
+      <p class="hint">The QR &amp; UPI link already contain your exact total amount and your order number in the payment note.</p>
+    </div>
+    <div class="panel">
+      <h2>Order Summary</h2>
+      <div id="paySummary"></div>
+      <button id="placeOrderBtn" class="btn green big" disabled onclick="placeOrder()">⏳ Place Order in 30s</button>
+      <p class="hint">⏱️ The Place Order button activates automatically after a 30‑second payment window.</p>
+      <button class="btn line" onclick="show('checkout')">← Back to Details</button>
+    </div>
+  </div>
+</section>
+
+<section id="view-success" class="view hidden">
+  <div class="success-box">
+    <div class="check">✅</div>
+    <h2>Order Placed Successfully!</h2>
+    <p>Order No: <b class="serif" id="successOrderNo"></b></p>
+    <p>Grand Total: <b id="successTotal"></b> &nbsp;•&nbsp; 🚚 Delivery: <b class="free-tag">FREE</b></p>
+    <p class="hint">📨 Your order details have been sent to our team via Telegram. We will contact you shortly to confirm your order and arrange delivery.</p>
+    <div class="pay-btns" style="justify-content:center">
+      <a class="btn wa" href="https://wa.me/919888604059" target="_blank">💬 Chat with Us on WhatsApp</a>
+      <button class="btn line" onclick="show('shop')">🛍️ Continue Shopping</button>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="ft">
+    <div><h3>ibruHerb</h3><p>Herbs &amp; Ayurvedic Medicine. Pure herbs, authentic ayurvedic medicines &amp; natural supplements — delivered across India.</p></div>
+    <div><h3>Contact</h3><p>📞 <b>9888604059</b><br>💬 WhatsApp: <b>+91 98886 04059</b><br>📍 <b>Natural Wellness Store</b></p></div>
+    <div><h3>Categories &amp; Delivery</h3><p>🌿 Herbs • 💊 Medicines • 🌱 Supplements • 🫙 Oils<br>💳 UPI: <b>9888604059@ybl</b><br>🚚 Delivery: <b>FREE</b> across India (₹0)</p></div>
+  </div>
+  <div class="ft-bottom">© 2026 ibruHerb. All rights reserved.</div>
+</footer>
+
+<div id="overlay" onclick="closeCart()"></div>
+<aside id="drawer">
+  <div class="dr-head"><h3 class="serif">🛒 Your Cart</h3><button onclick="closeCart()">✕</button></div>
+  <div id="cartItems"></div>
+  <div id="cartFoot"></div>
+</aside>
+<a class="fab" href="https://wa.me/919888604059" target="_blank" title="Chat on WhatsApp">💬</a>
+<div id="toast"></div>
+
+<script>
+/* ============ CONFIG ============ */
+const UPI_ID   = '9888604059@ybl';
+const WA_NUMBER= '919888604059';
+
+const TG_BOT_TOKEN = '8906023449:AAHzUcjGU8zujMf4ErX8OULn6w0B-anpWAw';
+const TG_CHAT_ID   = '1498082903';
+
+const CATEGORIES=["All","Herbs","Medicines","Supplements","Oils"];
+
+/* ============================================================
+   🧴 PRODUCT VARIANTS — EACH PRODUCT HAS UNIQUE MRP & SALE PRICE
+   ============================================================ */
+const PRODUCTS = [
+  {id:'p1',name:'Ashwagandha Powder', tag:'Bestseller', cat:'Herbs', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/17ef0d789-1d3f-4ad9-8f06-4c080ae3fa54.png', desc:'Ancient adaptogenic herb for stress relief, vitality & strength. 100% pure root powder.',
+    variants:[
+      {label:'50g',  mrp:499, price:299},
+      {label:'100g', mrp:799, price:499},
+      {label:'250g', mrp:1499,price:899}
+    ]},
+  {id:'p2',name:'Tulsi Leaves (Holy Basil)', tag:'New', cat:'Herbs', wt:0.08, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/1b5772cb3-09fa-43be-8c45-bf0b005c5817.png', desc:'Sacred holy basil — boosts immunity, respiratory health & natural healing.',
+    variants:[
+      {label:'50g',  mrp:399, price:249},
+      {label:'100g', mrp:649, price:399},
+      {label:'250g', mrp:1299,price:799}
+    ]},
+  {id:'p3',name:'Turmeric Capsules', tag:'New', cat:'Supplements', wt:0.12, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/16cab38b2-259f-4ca6-95c9-aca7999262d9.png', desc:'High-curcumin turmeric in easy-to-take capsules. Anti-inflammatory & antioxidant.',
+    variants:[
+      {label:'30 Capsules',  mrp:549, price:349},
+      {label:'60 Capsules',  mrp:899, price:599},
+      {label:'120 Capsules', mrp:1599,price:999}
+    ]},
+  {id:'p4',name:'Triphala Churna', tag:'Classic', cat:'Herbs', wt:0.15, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/1c4ea4fcf-b6a6-4336-b841-a7ad65acabe5.png', desc:'Three-fruit ayurvedic formula for digestion, detox & healthy bowel movement.',
+    variants:[
+      {label:'100g', mrp:349, price:199},
+      {label:'200g', mrp:599, price:349},
+      {label:'500g', mrp:1199,price:699}
+    ]},
+  {id:'p5',name:'Neem Oil', tag:'Pure', cat:'Oils', wt:0.12, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/115705c2a-84ce-4ae3-b498-c699264127f3.png', desc:'Cold-pressed pure neem oil for skin, hair & natural pest control.',
+    variants:[
+      {label:'50ml',  mrp:349, price:199},
+      {label:'100ml', mrp:599, price:349},
+      {label:'200ml', mrp:999, price:599}
+    ]},
+  {id:'p6',name:'Brahmi Tablets', tag:'Bestseller', cat:'Medicines', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/15c7089be-5bb9-4878-a6bf-b2e409ee5014.png', desc:'Memory enhancer & brain tonic. Improves focus, calmness & mental clarity.',
+    variants:[
+      {label:'30 Tablets',  mrp:449, price:279},
+      {label:'60 Tablets',  mrp:799, price:499},
+      {label:'120 Tablets', mrp:1399,price:849}
+    ]},
+  {id:'p7',name:'Giloy Juice', tag:'New', cat:'Supplements', wt:0.25, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/18a9c272f-44f3-4e80-be60-b79eb7a4f96c.png', desc:'Powerful immunity booster. Purifies blood & supports fever recovery.',
+    variants:[
+      {label:'200ml', mrp:349, price:199},
+      {label:'500ml', mrp:699, price:449},
+      {label:'1L',    mrp:1199,price:749}
+    ]},
+  {id:'p8',name:'Amla Powder', tag:'Bestseller', cat:'Herbs', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/117ba196d-cfea-4d17-a35c-9fa63a8689ba.png', desc:'Richest natural source of Vitamin C. Hair, skin & immunity superfood.',
+    variants:[
+      {label:'100g', mrp:299, price:179},
+      {label:'250g', mrp:599, price:349},
+      {label:'500g', mrp:999, price:599}
+    ]},
+  {id:'p9',name:'Shilajit Resin', tag:'Premium', cat:'Supplements', wt:0.05, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/18d849303-73ae-48f7-b893-9709faf131be.png', desc:'Pure Himalayan mineral pitch. Boosts energy, stamina & vitality naturally.',
+    variants:[
+      {label:'10g',  mrp:1299, price:799},
+      {label:'20g',  mrp:2299, price:1399},
+      {label:'50g',  mrp:4999, price:2999}
+    ]},
+  {id:'p10',name:'Moringa Powder', tag:'New', cat:'Herbs', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/13953a736-b5fd-4098-9373-038693bf23f3.png', desc:'Nutrient-dense miracle tree powder. Rich in iron, calcium & antioxidants.',
+    variants:[
+      {label:'100g', mrp:449, price:279},
+      {label:'250g', mrp:899, price:549},
+      {label:'500g', mrp:1599,price:949}
+    ]},
+  {id:'p11',name:'Aloe Vera Gel', tag:'Pure', cat:'Oils', wt:0.2, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/16c121521-d31d-4656-a392-ee236daaaee2.png', desc:'100% pure aloe vera gel for skin hydration, healing & digestive health.',
+    variants:[
+      {label:'100ml', mrp:299, price:179},
+      {label:'200ml', mrp:499, price:299},
+      {label:'500ml', mrp:999, price:599}
+    ]},
+  {id:'p12',name:'Fenugreek Seeds', tag:'Classic', cat:'Herbs', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/14d5a10fb-5e5d-4626-8653-58c4144ad350.png', desc:'Traditional remedy for blood sugar control, digestion & lactation support.',
+    variants:[
+      {label:'100g', mrp:199, price:119},
+      {label:'250g', mrp:399, price:249},
+      {label:'500g', mrp:699, price:429}
+    ]},
+  {id:'p13',name:'Herbal Cough Syrup', tag:'New', cat:'Medicines', wt:0.25, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/1306fa5a0-5397-4a17-9566-01b0b7e0094f.png', desc:'Honey-ginger herbal syrup for cough, cold & sore throat relief.',
+    variants:[
+      {label:'100ml', mrp:349, price:199},
+      {label:'200ml', mrp:599, price:349},
+      {label:'450ml', mrp:999, price:599}
+    ]},
+  {id:'p14',name:'Digestive Tablets', tag:'Bestseller', cat:'Medicines', wt:0.08, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/1e78ad2cc-8184-4eac-a511-563b986b58c8.png', desc:'Fennel-mint blend for bloating, gas & complete digestive comfort.',
+    variants:[
+      {label:'30 Tablets',  mrp:299, price:179},
+      {label:'60 Tablets',  mrp:549, price:329},
+      {label:'120 Tablets', mrp:999, price:599}
+    ]},
+  {id:'p15',name:'Immunity Booster', tag:'Bestseller', cat:'Supplements', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/10f86a849-9ced-43dd-9cfa-f43eb0c0409d.png', desc:'Echinacea-ginger capsules for year-round immune system support.',
+    variants:[
+      {label:'30 Capsules',  mrp:599, price:379},
+      {label:'60 Capsules',  mrp:1049,price:649},
+      {label:'90 Capsules',  mrp:1499,price:899}
+    ]},
+  {id:'p16',name:'Joint Pain Relief Oil', tag:'Therapeutic', cat:'Oils', wt:0.12, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/179a872d3-baab-4ac1-81a3-5a3984d06728.png', desc:'Ayurvedic massage oil with 21 herbs for arthritis & joint pain relief.',
+    variants:[
+      {label:'50ml',  mrp:449, price:279},
+      {label:'100ml', mrp:749, price:449},
+      {label:'200ml', mrp:1299,price:799}
+    ]},
+  {id:'p17',name:'Hair Growth Oil', tag:'New', cat:'Oils', wt:0.12, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/17fa5f45b-c8d6-4cec-8710-cbd84add542f.png', desc:'Amla-bhringraj-hibiscus blend for hair growth, thickness & shine.',
+    variants:[
+      {label:'100ml', mrp:499, price:299},
+      {label:'200ml', mrp:849, price:499},
+      {label:'500ml', mrp:1799,price:1099}
+    ]},
+  {id:'p18',name:'Diabetes Care Powder', tag:'Bestseller', cat:'Medicines', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/1af060ea5-7912-4423-9520-5b2ce78a0341.png', desc:'Fenugreek-bitter gourd blend to support healthy blood sugar levels.',
+    variants:[
+      {label:'100g', mrp:549, price:329},
+      {label:'250g', mrp:1099,price:649},
+      {label:'500g', mrp:1899,price:1099}
+    ]},
+  {id:'p19',name:'Chyawanprash', tag:'Bestseller', cat:'Supplements', wt:0.5, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/107b8d255-76c4-4d5c-b4ff-ad48a5a61dd1.png', desc:'Traditional 40-herb immunity jam with amla, honey & saffron.',
+    variants:[
+      {label:'250g', mrp:449, price:279},
+      {label:'500g', mrp:799, price:479},
+      {label:'1kg',  mrp:1399,price:849}
+    ]},
+  {id:'p20',name:'Multivitamin Tablets', tag:'New', cat:'Supplements', wt:0.1, img:'https://image.qwenlm.ai/public_source/76bdda63-5849-4756-a67f-7eac5c562bcb/145b483b6-e2f2-4a95-9178-56f0faf8371b.png', desc:'Complete daily nutrition from natural sources. Energy & vitality support.',
+    variants:[
+      {label:'30 Tablets',  mrp:499, price:299},
+      {label:'60 Tablets',  mrp:899, price:549},
+      {label:'90 Tablets',  mrp:1249,price:749}
+    ]},
+    {id:'p21',name:'safed musli powder', tag:'New', cat:'Herbs', wt: 0, img:'https://cdn1.healthians.com/blog/wp-content/uploads/2025/01/ayurvedic-potent-herb-musli-also-known-as-safed-moosli-swetha-musli-powder-raw-form-600x500.jpg', desc:'Safed musli or White musli is a wildly grown white-colored herb. It is often referred to as "White gold" or "Divya aushad". Safed musli is used popularly to improve sexual performance and general overall health in both men and women.',
+    variants:[
+          {
+                "label": "50g",
+                "mrp": 300,
+                "price": 100
+          },
+          {
+                "label": "100g",
+                "mrp": 600,
+                "price": 200
+          }
+    ]}
+
+];
+
+const STATES=['Punjab','Haryana','Delhi','Chandigarh','Jammu & Kashmir','Ladakh','Himachal Pradesh','Uttarakhand','Uttar Pradesh','Rajasthan','Madhya Pradesh','Chhattisgarh','Bihar','Jharkhand','West Bengal','Odisha','Assam','Meghalaya','Mizoram','Tripura','Manipur','Nagaland','Arunachal Pradesh','Sikkim','Gujarat','Maharashtra','Goa','Karnataka','Telangana','Andhra Pradesh','Tamil Nadu','Kerala','Puducherry','Andaman & Nicobar','Lakshadweep','Dadra & Nagar Haveli & Daman & Diu'];
+
+let cart={}, selVar={}, currentOrder=null, cdTimer=null;
+let query='', category='All', currentView='shop';
+let addresses=[]; try{addresses=JSON.parse(localStorage.getItem('ih_addresses')||'[]');}catch(e){}
+let selectedAddrId=localStorage.getItem('ih_last_addr')||null;
+const $=s=>document.querySelector(s);
+const fmt=n=>'₹'+n.toLocaleString('en-IN');
+const byId=id=>PRODUCTS.find(p=>p.id===id);
+const keyOf=(id,vi)=>id+'_'+vi;
+function parseKey(k){const i=k.lastIndexOf('_');const p=byId(k.slice(0,i));const vi=+k.slice(i+1);return {p,v:p.variants[vi],vi};}
+
+/* ---------- MRP / Sale helpers ---------- */
+function discountPct(mrp,sale){
+  if(!mrp||mrp<=sale) return 0;
+  return Math.round(((mrp-sale)/mrp)*100);
+}
+function priceBlockHTML(v){
+  const d=discountPct(v.mrp,v.price);
+  return `<div class="price-block">
+    <div class="price-main">
+      <span class="sale-price">${fmt(v.price)}</span>
+      ${v.mrp>v.price?`<span class="mrp-price">${fmt(v.mrp)}</span>`:''}
+      ${d>0?`<span class="discount-badge">${d}% OFF</span>`:''}
+    </div>
+  </div>`;
+}
+
+/* ============ SEARCH & CATEGORY FILTER ============ */
+function filteredProducts(){
+  return PRODUCTS.filter(p=>{
+    const okCat=(category==='All'||p.cat===category);
+    const hay=(p.name+' '+p.desc+' '+p.tag+' '+p.cat).toLowerCase();
+    return okCat&&(!query||hay.includes(query));
+  });
+}
+function onSearch(v){
+  query=v.trim().toLowerCase();
+  if(currentView!=='shop')show('shop',false);
+  renderProducts();
+}
+function pickCat(c){
+  category=c;
+  if(currentView!=='shop')show('shop',false);
+  renderCats();renderProducts();
+}
+function clearFilters(){
+  query='';category='All';$('#searchInput').value='';
+  renderCats();renderProducts();toast('🔄 Filters cleared');
+}
+function renderCats(){
+  $('#catBar').innerHTML=CATEGORIES.map(c=>{
+    const n=c==='All'?PRODUCTS.length:PRODUCTS.filter(p=>p.cat===c).length;
+    const icon=c==='All'?'🛍️':(c==='Herbs'?'🌿':(c==='Medicines'?'💊':(c==='Supplements'?'🌱':'🫙')));
+    return `<button class="cat-chip ${c===category?'on':''}" onclick="pickCat('${c}')">${icon} ${c} (${n})</button>`;
+  }).join('')+( (query||category!=='All')?`<button class="cat-chip" onclick="clearFilters()">✕ Clear</button>`:'' );
+}
+
+/* ============ RENDER PRODUCT CARD ============ */
+function renderCard(p){
+  const vi=selVar[p.id]||0;
+  const v=p.variants[vi];
+  const d=discountPct(v.mrp,v.price);
+  return `
+   <article class="card">
+     <div class="card-img"><img src="${p.img}" onerror="imgFallback(this)" alt="${p.name}" loading="lazy">
+       <span class="tag">${p.cat==='Herbs'?'🌿 Herbs':(p.cat==='Medicines'?'💊 Medicine':(p.cat==='Supplements'?'🌱 Supplement':'🫙 Oil'))}</span>
+       <span class="tag2">${p.tag}</span>
+       ${d>0?`<span class="sale-banner">🔥 ${d}% OFF</span>`:''}
+     </div>
+     <div class="card-body">
+       <h3>${p.name}</h3><p class="desc">${p.desc}</p>
+       <div class="vars">${p.variants.map((vv,i)=>{
+         const dd=discountPct(vv.mrp,vv.price);
+         return `<button class="var-pill ${i===vi?'on':''}" onclick="pickVar('${p.id}',${i})">${vv.label} • ${fmt(vv.price)}${dd>0?` <span style="color:var(--sale)">-${dd}%</span>`:''}</button>`;
+       }).join('')}</div>
+       <div class="price-row">
+         ${priceBlockHTML(v)}
+         <span class="wt">${p.wt} kg</span>
+       </div>
+       <div class="actions" data-act="${p.id}"></div>
+     </div>
+   </article>`;
+}
+
+/* ============ RENDER SECTIONS ============ */
+function renderProducts(){
+  const list=filteredProducts();
+  
+  if(!list.length){
+    $('#newProductsSection').innerHTML='';
+    $('#bestSellingSection').innerHTML='';
+    $('#allProductsSection').innerHTML=`<div class="empty" style="grid-column:1/-1">😕 No products found ${query?`for "${query}"`:''} ${category!=='All'?'in '+category:''}.<br><br><button class="btn green" onclick="clearFilters()">Clear Search &amp; Filters</button></div>`;
+    return;
+  }
+
+  const newProducts = list.filter(p => p.tag === 'New');
+  const bestSelling = list.filter(p => p.tag === 'Bestseller');
+  const allProducts = list;
+
+  if(newProducts.length > 0){
+    $('#newProductsSection').innerHTML = `
+      <div class="section-header">
+        <span class="section-icon">✨</span>
+        <h2>New Arrivals</h2>
+        <span class="section-count">${newProducts.length} Products</span>
+      </div>
+      <div class="grid">${newProducts.map(p=>renderCard(p)).join('')}</div>
+    `;
+  } else {
+    $('#newProductsSection').innerHTML = '';
+  }
+
+  if(bestSelling.length > 0){
+    $('#bestSellingSection').innerHTML = `
+      <div class="section-header">
+        <span class="section-icon">🏆</span>
+        <h2>Best Sellers</h2>
+        <span class="section-count">${bestSelling.length} Products</span>
+      </div>
+      <div class="grid">${bestSelling.map(p=>renderCard(p)).join('')}</div>
+    `;
+  } else {
+    $('#bestSellingSection').innerHTML = '';
+  }
+
+  $('#allProductsSection').innerHTML = `
+    <div class="section-header">
+      <span class="section-icon">🛍️</span>
+      <h2>All Products</h2>
+      <span class="section-count">${allProducts.length} Products</span>
+    </div>
+    <div class="grid">${allProducts.map(p=>renderCard(p)).join('')}</div>
+  `;
+
+  list.forEach(p=>renderAction(p.id));
+}
+
+function pickVar(id,i){selVar[id]=i;renderProducts();}
+function renderAction(id){
+  const vi=selVar[id]||0, key=keyOf(id,vi), q=cart[key]||0;
+  const el=document.querySelector(`[data-act="${id}"]`);
+  if(!el)return;
+  el.innerHTML = q===0
+    ? `<button class="btn dark" onclick="add('${id}')">Add to Cart</button>`
+    : `<div class="stepper"><button onclick="dec('${key}')">−</button><span>${q}</span><button onclick="inc('${key}')">+</button></div>
+       <button class="btn green" onclick="openCart()">✓ Added</button>`;
+}
+function imgFallback(el){el.onerror=null;el.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="100%" height="100%" fill="#e8f0e8"/><text x="50%" y="50%" font-size="42" text-anchor="middle" fill="#2d7a3e" font-family="serif">ibruHerb</text></svg>');}
+
+/* ============ CART (per size variant) ============ */
+function add(id){const vi=selVar[id]||0,key=keyOf(id,vi);cart[key]=(cart[key]||0)+1;afterCart();toast(byId(id).name+' ('+byId(id).variants[vi].label+') added to cart');}
+function inc(key){cart[key]++;afterCart();}
+function dec(key){cart[key]--;if(cart[key]<=0)delete cart[key];afterCart();}
+function removeItem(key){delete cart[key];afterCart();}
+function afterCart(){renderProducts();renderCart();}
+function cartQty(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function openCart(){$('#drawer').classList.add('on');$('#overlay').classList.add('on');}
+function closeCart(){$('#drawer').classList.remove('on');$('#overlay').classList.remove('on');}
+function renderCart(){
+  $('#cartCount').textContent=cartQty();
+  const keys=Object.keys(cart);
+  if(!keys.length){$('#cartItems').innerHTML='<p class="empty">Your cart is empty 🛒</p>';$('#cartFoot').innerHTML='';return;}
+  $('#cartItems').innerHTML=keys.map(k=>{const {p,v}=parseKey(k),q=cart[k];return `
+    <div class="ci"><img src="${p.img}" onerror="imgFallback(this)">
+      <div class="ci-info"><strong>${p.name}</strong><span>${v.label} • <span class="ci-sale">${fmt(v.price)}</span>${v.mrp>v.price?` <span style="text-decoration:line-through;color:var(--mrp)">${fmt(v.mrp)}</span>`:''}</span>
+        <div class="stepper" style="margin-top:6px"><button onclick="dec('${k}')">−</button><span>${q}</span><button onclick="inc('${k}')">+</button></div>
+      </div>
+      <div class="ci-right"><span class="ci-sale">${fmt(v.price*q)}</span>${v.mrp>v.price?`<span class="ci-mrp">${fmt(v.mrp*q)}</span>`:''}<br><button class="rm" onclick="removeItem('${k}')">✕ Remove</button></div>
+    </div>`;}).join('');
+  const t=calcTotals();
+  $('#cartFoot').innerHTML=`
+    <div class="sum-row"><span>Subtotal (${cartQty()} items)</span><strong>${fmt(t.subtotal)}</strong></div>
+    ${t.mrpTotal>t.subtotal?`<div class="sum-row"><span>You Save 🎉</span><strong style="color:var(--sale)">−${fmt(t.mrpTotal-t.subtotal)}</strong></div>`:''}
+    <div class="sum-row"><span>Delivery 🎉</span><span class="free-tag">FREE</span></div>
+    <button class="btn green big" onclick="closeCart();show('checkout')">Proceed to Checkout →</button>`;
+}
+
+/* ============ TOTALS (FREE DELIVERY) ============ */
+function calcTotals(){
+  let subtotal=0,mrpTotal=0,weight=0;
+  for(const k in cart){const {p,v}=parseKey(k);subtotal+=v.price*cart[k];mrpTotal+=v.mrp*cart[k];weight+=p.wt*cart[k];}
+  const kg=Math.max(1,Math.ceil(weight-1e-9));
+  const rate=0, delivery=0;
+  return {subtotal,mrpTotal,weight,kg,rate,delivery,total:subtotal+delivery};
+}
+function summaryHTML(t){
+  let h='<div class="sum-items">'+Object.keys(cart).map(k=>{const {p,v}=parseKey(k),q=cart[k];
+    return `<div class="sum-row"><span>${p.name} (${v.label}) × ${q}</span><span>${fmt(v.price*q)}</span></div>`;}).join('')+'</div>';
+  h+=`<div class="sum-row"><span>MRP Total</span><span style="text-decoration:line-through;color:var(--mrp)">${fmt(t.mrpTotal)}</span></div>
+      <div class="sum-row"><span>Sale Price Total</span><span>${fmt(t.subtotal)}</span></div>`;
+  if(t.mrpTotal>t.subtotal){
+    h+=`<div class="savings-row">🎉 You Save: ${fmt(t.mrpTotal-t.subtotal)} (${Math.round(((t.mrpTotal-t.subtotal)/t.mrpTotal)*100)}% OFF)</div>`;
+  }
+  h+=`<div class="sum-row"><span>Total Weight</span><span>${t.weight.toFixed(2)} kg</span></div>
+      <div class="sum-row"><span>Delivery 🎉 (All India)</span><span class="free-tag">FREE — ₹0</span></div>
+      <div class="sum-row total"><span>Grand Total</span><span>${fmt(t.total)}</span></div>`;
+  return h;
+}
+
+/* ============ ADDRESS BOOK (localStorage) ============ */
+function saveAddresses(){
+  localStorage.setItem('ih_addresses',JSON.stringify(addresses));
+  if(selectedAddrId)localStorage.setItem('ih_last_addr',selectedAddrId);else localStorage.removeItem('ih_last_addr');
+}
+function renderAddresses(){
+  const box=$('#addrList');
+  if(!addresses.length){box.innerHTML='<p class="empty-addr">No saved addresses yet — fill the form below once, it will be saved on this device for next time. 💾</p>';return;}
+  box.innerHTML=addresses.map(a=>`
+    <div class="addr-card ${a.id===selectedAddrId?'sel':''}" onclick="selectAddress('${a.id}')">
+      <div><strong>${a.name}</strong> ${a.id===selectedAddrId?'<span class="tick">✓ SELECTED</span>':''}
+        <span>📞 ${a.phone}</span><span>${a.addr}, ${a.state} — ${a.pin}</span></div>
+      <button class="addr-del" title="Delete address" onclick="delAddr(event,'${a.id}')">🗑️</button>
+    </div>`).join('');
+}
+function selectAddress(id){
+  selectedAddrId=id;const a=addresses.find(x=>x.id===id);
+  if(a){$('#fName').value=a.name;$('#fPhone').value=a.phone;$('#fAddr').value=a.addr;$('#fState').value=a.state;$('#fPin').value=a.pin;}
+  saveAddresses();renderAddresses();
+}
+function newAddressForm(){
+  selectedAddrId=null;saveAddresses();renderAddresses();
+  ['fName','fPhone','fAddr','fPin'].forEach(i=>$('#'+i).value='');$('#fState').value='Punjab';
+  $('#fName').focus();toast('✏️ Fill the new address — it will be saved');
+}
+function delAddr(ev,id){
+  ev.stopPropagation();
+  addresses=addresses.filter(a=>a.id!==id);
+  if(selectedAddrId===id)selectedAddrId=null;
+  saveAddresses();renderAddresses();toast('🗑️ Address removed');
+}
+
+/* ============ VIEWS + BACK BUTTON FIX ============ */
+function show(v,push=true){
+  ['shop','checkout','payment','success'].forEach(x=>$('#view-'+x).classList.add('hidden'));
+  $('#view-'+v).classList.remove('hidden');
+  currentView=v;
+  closeCart();window.scrollTo({top:0,behavior:'smooth'});
+  if(v==='checkout')renderCoSummary();
+  if(v==='payment'){if(!currentOrder){show('checkout',push);return;}startCountdown();}
+  if(push)hPush(v);
+}
+function hPush(v){try{history.pushState({view:v},'');}catch(e){}}
+function hReplace(v){try{history.replaceState({view:v},'');}catch(e){}}
+window.addEventListener('popstate',e=>{
+  const v=(e.state&&e.state.view)?e.state.view:'shop';
+  show(v,false);
+  if(v==='shop'){renderProducts();renderCart();hPush('shop');}
+});
+document.addEventListener('keydown',e=>{
+  const t=document.activeElement;
+  if(e.key==='Backspace'&&t&&!/INPUT|TEXTAREA|SELECT/.test(t.tagName)&&!t.isContentEditable){
+    e.preventDefault();history.back();
+  }
+});
+
+/* ============ CHECKOUT ============ */
+function renderCoSummary(){
+  if(!cartQty()){show('shop');toast('Your cart is empty');return;}
+  $('#coSummary').innerHTML=summaryHTML(calcTotals());
+}
+function proceedPayment(){
+  const name=$('#fName').value.trim(),phone=$('#fPhone').value.trim(),addr=$('#fAddr').value.trim(),
+        state=$('#fState').value,pin=$('#fPin').value.trim();
+  if(name.length<3)return toast('⚠️ Please enter your full name');
+  if(!/^[6-9]\d{9}$/.test(phone))return toast('⚠️ Enter a valid 10-digit mobile number');
+  if(addr.length<10)return toast('⚠️ Please enter a complete address');
+  if(!/^\d{6}$/.test(pin))return toast('⚠️ Enter a valid 6-digit PIN code');
+  if(selectedAddrId&&addresses.find(a=>a.id===selectedAddrId)){
+    const i=addresses.findIndex(a=>a.id===selectedAddrId);
+    addresses[i]={id:selectedAddrId,name,phone,addr,state,pin};
+  }else{
+    selectedAddrId='a'+Date.now();
+    addresses.push({id:selectedAddrId,name,phone,addr,state,pin});
+  }
+  saveAddresses();renderAddresses();toast('💾 Address saved on this device');
+  const t=calcTotals();
+  currentOrder={...t,name,phone,addr,state,pin,no:genOrderNo(),
+    items:Object.keys(cart).map(k=>{const {p,v}=parseKey(k);return {p,v,q:cart[k]};})};
+  buildPayment();show('payment');
+}
+function genOrderNo(){
+  const d=new Date(),p=n=>String(n).padStart(2,'0');
+  return `IH-${String(d.getFullYear()).slice(2)}${p(d.getMonth()+1)}${p(d.getDate())}-${Math.floor(1000+Math.random()*9000)}`;
+}
+
+/* ============ PAYMENT (QR + UPI LINK + 30s) ============ */
+function buildPayment(){
+  const o=currentOrder;
+  const upi=`upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent('ibruHerb')}&am=${o.total.toFixed(2)}&tn=${encodeURIComponent('Order '+o.no)}&cu=INR`;
+  o.upi=upi;
+  $('#payOrderNo').textContent='Order No: '+o.no;
+  $('#upiIdText').textContent=UPI_ID;
+  $('#qrImg').src=`https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=2&data=${encodeURIComponent(upi)}`;
+  $('#upiLinkBtn').href=upi;
+  $('#paySummary').innerHTML=summaryHTML(o);
+}
+function copyUpi(){
+  const ta=document.createElement('textarea');ta.value=currentOrder.upi;document.body.appendChild(ta);
+  ta.select();document.execCommand('copy');document.body.removeChild(ta);toast('📋 UPI link copied!');
+}
+function startCountdown(){
+  clearInterval(cdTimer);let t=30;const b=$('#placeOrderBtn');
+  b.disabled=true;b.textContent=`⏳ Place Order in ${t}s`;
+  cdTimer=setInterval(()=>{t--;
+    if(t<=0){clearInterval(cdTimer);b.disabled=false;b.innerHTML='✅ Place Order';}
+    else b.textContent=`⏳ Place Order in ${t}s`;},1000);
+}
+
+/* ============ ORDER MESSAGE BUILDER (for Telegram) ============ */
+function buildOrderMessage(o){
+  const L=[];
+  L.push('🌿 *NEW ORDER — ibruHerb*');
+  L.push('🧾 Order No: *'+o.no+'*');
+  L.push('📅 '+new Date().toLocaleString('en-IN'));
+  L.push('','🛒 *Items:*');
+  o.items.forEach((it,i)=>{
+    const lineTotal=it.v.price*it.q;
+    const mrpLine=it.v.mrp*it.q;
+    const saved=mrpLine-lineTotal;
+    L.push(`${i+1}. ${it.p.name} [${it.p.cat}] (${it.v.label}) × ${it.q} = ${fmt(lineTotal)}${saved>0?` (MRP ${fmt(mrpLine)}, save ${fmt(saved)})`:''}`);
+  });
+  L.push('',`MRP Total: ${fmt(o.mrpTotal)}`,
+         `Sale Price Total: ${fmt(o.subtotal)}`,
+         o.mrpTotal>o.subtotal?`🎉 You Save: ${fmt(o.mrpTotal-o.subtotal)} (${Math.round(((o.mrpTotal-o.subtotal)/o.mrpTotal)*100)}% OFF)`:'',
+         `Total Weight: ${o.weight.toFixed(2)} kg`,
+         `🚚 Delivery (${o.state}): FREE — ₹0 (Free Delivery Offer)`,
+         `💰 *Grand Total: ${fmt(o.total)}*`,'',
+         '📦 *Delivery Address:*',o.name,'📞 '+o.phone,o.addr,`${o.state} — ${o.pin}`,'',
+         `💳 Payment via UPI: ${UPI_ID}`,`📝 Note: ${o.no}`);
+  return L.join('\n');
+}
+
+/* ============ SEND ORDER TO TELEGRAM BOT ONLY ============ */
+function sendOrderToTelegram(o){
+  if(!TG_CHAT_ID||TG_CHAT_ID==='PASTE_YOUR_CHAT_ID_HERE'){
+    console.warn('Telegram alert skipped — TG_CHAT_ID not set yet.');
+    return Promise.reject('TG_CHAT_ID not configured');
+  }
+  const text=buildOrderMessage(o);
+  return fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:TG_CHAT_ID,text,parse_mode:'Markdown'})
+  })
+  .then(r=>r.json())
+  .then(data=>{
+    if(!data.ok){
+      console.error('Telegram API error:',data);
+      throw new Error(data.description||'Telegram send failed');
+    }
+    return data;
+  });
+}
+
+/* ============ PLACE ORDER → TELEGRAM ONLY (no WhatsApp) ============ */
+function placeOrder(){
+  const o=currentOrder;
+  const btn=$('#placeOrderBtn');
+  btn.disabled=true;
+  btn.innerHTML='⏳ Sending order to our team...';
+
+  sendOrderToTelegram(o)
+    .then(()=>{
+      $('#successOrderNo').textContent=o.no;
+      $('#successTotal').textContent=fmt(o.total);
+      show('success');
+      cart={};afterCart();
+      toast('✅ Order sent successfully to our team!');
+    })
+    .catch(err=>{
+      console.error('Order send failed:',err);
+      $('#successOrderNo').textContent=o.no;
+      $('#successTotal').textContent=fmt(o.total);
+      show('success');
+      cart={};afterCart();
+      toast('⚠️ Order placed. Please contact us at 9888604059 to confirm.');
+    });
+}
+
+/* ============ MISC ============ */
+let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2200);}
+
+/* ============ INIT ============ */
+$('#fState').innerHTML=STATES.map(s=>`<option ${s==='Punjab'?'selected':''}>${s}</option>`).join('');
+renderAddresses();
+const lastA=addresses.find(a=>a.id===selectedAddrId);
+if(lastA){$('#fName').value=lastA.name;$('#fPhone').value=lastA.phone;$('#fAddr').value=lastA.addr;$('#fState').value=lastA.state;$('#fPin').value=lastA.pin;}
+renderCats();renderProducts();renderCart();
+hReplace('shop');hPush('shop');
+</script>
+</body>
+</html>
