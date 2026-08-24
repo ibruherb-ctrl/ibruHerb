@@ -320,6 +320,9 @@ footer b{color:#fff}
 const UPI_ID   = '9888604059@ybl';
 const WA_NUMBER= '919888604059';
 
+/* Telegram order alerts — get your CHAT_ID by messaging the bot then visiting
+   https://api.telegram.org/bot<TOKEN>/getUpdates in a browser */
+    
 const TG_BOT_TOKEN = '8906023449:AAHzUcjGU8zujMf4ErX8OULn6w0B-anpWAw';
 const TG_CHAT_ID   = '1498082903';
 
@@ -448,21 +451,7 @@ const PRODUCTS = [
       {label:'30 Tablets',  mrp:499, price:299},
       {label:'60 Tablets',  mrp:899, price:549},
       {label:'90 Tablets',  mrp:1249,price:749}
-    ]},
-    {id:'p21',name:'safed musli powder', tag:'New', cat:'Herbs', wt: 0, img:'https://cdn1.healthians.com/blog/wp-content/uploads/2025/01/ayurvedic-potent-herb-musli-also-known-as-safed-moosli-swetha-musli-powder-raw-form-600x500.jpg', desc:'Safed musli or White musli is a wildly grown white-colored herb. It is often referred to as "White gold" or "Divya aushad". Safed musli is used popularly to improve sexual performance and general overall health in both men and women.',
-    variants:[
-          {
-                "label": "50g",
-                "mrp": 300,
-                "price": 100
-          },
-          {
-                "label": "100g",
-                "mrp": 600,
-                "price": 200
-          }
     ]}
-
 ];
 
 const STATES=['Punjab','Haryana','Delhi','Chandigarh','Jammu & Kashmir','Ladakh','Himachal Pradesh','Uttarakhand','Uttar Pradesh','Rajasthan','Madhya Pradesh','Chhattisgarh','Bihar','Jharkhand','West Bengal','Odisha','Assam','Meghalaya','Mizoram','Tripura','Manipur','Nagaland','Arunachal Pradesh','Sikkim','Gujarat','Maharashtra','Goa','Karnataka','Telangana','Andhra Pradesh','Tamil Nadu','Kerala','Puducherry','Andaman & Nicobar','Lakshadweep','Dadra & Nagar Haveli & Daman & Diu'];
@@ -472,6 +461,7 @@ let query='', category='All', currentView='shop';
 let addresses=[]; try{addresses=JSON.parse(localStorage.getItem('ih_addresses')||'[]');}catch(e){}
 let selectedAddrId=localStorage.getItem('ih_last_addr')||null;
 const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
 const fmt=n=>'₹'+n.toLocaleString('en-IN');
 const byId=id=>PRODUCTS.find(p=>p.id===id);
 const keyOf=(id,vi)=>id+'_'+vi;
@@ -600,19 +590,33 @@ function renderProducts(){
     <div class="grid">${allProducts.map(p=>renderCard(p)).join('')}</div>
   `;
 
-  list.forEach(p=>renderAction(p.id));
+  // ✅ FIX: Use unique IDs per section to avoid duplicate data-act conflicts
+  // We need to render actions for ALL cards across all sections
+  renderAllActions();
+}
+
+/* ✅ FIXED: Render action buttons for ALL matching cards (handles duplicates across sections) */
+function renderAllActions(){
+  // Get unique product IDs from filtered list
+  const list = filteredProducts();
+  const uniqueIds = [...new Set(list.map(p => p.id))];
+  uniqueIds.forEach(id => renderAction(id));
 }
 
 function pickVar(id,i){selVar[id]=i;renderProducts();}
+
+/* ✅ FIXED: Use querySelectorAll to update ALL instances of the same product card */
 function renderAction(id){
   const vi=selVar[id]||0, key=keyOf(id,vi), q=cart[key]||0;
-  const el=document.querySelector(`[data-act="${id}"]`);
-  if(!el)return;
-  el.innerHTML = q===0
+  const els=document.querySelectorAll(`[data-act="${id}"]`);
+  if(!els.length)return;
+  const html = q===0
     ? `<button class="btn dark" onclick="add('${id}')">Add to Cart</button>`
     : `<div class="stepper"><button onclick="dec('${key}')">−</button><span>${q}</span><button onclick="inc('${key}')">+</button></div>
        <button class="btn green" onclick="openCart()">✓ Added</button>`;
+  els.forEach(el=>{ el.innerHTML = html; });
 }
+
 function imgFallback(el){el.onerror=null;el.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="100%" height="100%" fill="#e8f0e8"/><text x="50%" y="50%" font-size="42" text-anchor="middle" fill="#2d7a3e" font-family="serif">ibruHerb</text></svg>');}
 
 /* ============ CART (per size variant) ============ */
