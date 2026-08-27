@@ -110,11 +110,11 @@ const PRODUCTS = [
     variants:[
       {label:'75g', mrp:249, price:119}
     ]},
-  {id:'p22',name:'Velvet Root', tag:'Bestseller', cat:'Supplements', wt:0, img:'images/Bulk veda.png', desc:'These five herbs are cornerstone botanical remedies in Traditional Ayurvedic medicine, often combined in revitalizing rasayana formulations to boost vitality, reduce stress, and improve physical performance.',
+  {id:'p22',name:'Velvet Root', tag:'Bestseller', cat:'Supplements', wt:0, img:'https://lh3.googleusercontent.com/d/104KLO1GjXmnz8OlyPeaz9J91Hd7G1NoW=s600', desc:'These five herbs are cornerstone botanical remedies in Traditional Ayurvedic medicine, often combined in revitalizing rasayana formulations to boost vitality, reduce stress, and improve physical performance.',
     variants:[
       {label:'100g', mrp:1399, price:899}
     ]},
-  {id:'p23',name:'Endura Root v1', tag:'New', cat:'Medicines', wt:0, img:'images/178776072553c7.png', desc:'Herbal sexual performance supplements are natural dietary formulas designed to enhance libido, stamina, energy, and blood flow using traditional botanicals.',
+  {id:'p23',name:'Endura Root v1', tag:'New', cat:'Medicines', wt:0, img:'https://lh3.googleusercontent.com/d/1jx_F6goEBd5lj7ihuVhsX-gSq3t8NuuM=s600', desc:'Herbal sexual performance supplements are natural dietary formulas designed to enhance libido, stamina, energy, and blood flow using traditional botanicals.',
     variants:[
       {label:'100g', mrp:1999, price:999}
     ]},
