@@ -129,5 +129,9 @@ const PRODUCTS = [
   {id:"p26",name:"FungoNeem", tag:"Bestseller", cat:"Medicines", wt:0, img:"https://lh3.googleusercontent.com/d/1YNL72yF00ywCKj8s4dkwC4G15KQT65xv=s500", desc:"Fungoneem Herbal Anti-Fungal Cream is a natural formulation designed to provide soothing relief from skin irritation and fungal conditions. It targets symptoms such as itching, burning sensations, redness, and red patches to restore healthy-looking skin.",
     variants:[
       {label:"75g", mrp:200, price:99}
+    ]},
+  {id:"p1787911863955",name:"Smart Gadgets", tag:"New", cat:"Herbs", wt:0.01, img:"https://static.vecteezy.com/system/resources/thumbnails/056/654/427/small/mockup-showcases-collection-of-tech-gadgets-designed-in-isometric-view-featuring-stylish-headphones-sleek-power-bank-and-modern-smartphone-all-ready-for-branding-and-customization-photo.jpeg", desc:"Smart Gadgets Stock Photos, Images and Backgrounds for Free",
+    variants:[
+      {label:"10pcs", mrp:9999, price:99}
     ]}
 ];
