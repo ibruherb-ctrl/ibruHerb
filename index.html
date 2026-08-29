@@ -215,15 +215,12 @@ footer b{color:#fff}
 
     <div id="catBar" class="cat-bar"></div>
 
-    <!-- NEW PRODUCTS SECTION -->
     <div id="section-new"></div>
     <div id="newProductsSection"></div>
 
-    <!-- BEST SELLING SECTION -->
     <div id="section-best"></div>
     <div id="bestSellingSection"></div>
 
-    <!-- ALL PRODUCTS SECTION -->
     <div id="section-all"></div>
     <div id="allProductsSection"></div>
 
@@ -266,7 +263,7 @@ footer b{color:#fff}
 <section id="view-payment" class="view hidden">
   <div class="pay-wrap">
     <div class="panel">
-      <span class="order-pill" id="payOrderNo">IH-000000-0000</span>
+      <span class="order-pill" id="payOrderNo">IBR-0000000</span>
       <h2>Scan &amp; Pay via UPI</h2>
       <div class="qr-box"><img id="qrImg" alt="UPI Payment QR Code"></div>
       <p class="upi-id">UPI ID: <b id="upiIdText"></b></p>
@@ -318,7 +315,6 @@ footer b{color:#fff}
 <a class="fab" href="https://wa.me/919888604059" target="_blank" title="Chat on WhatsApp">💬</a>
 <div id="toast"></div>
 
-<!-- Products loaded from external file -->
 <script src="products.js"></script>
 
 <script>
@@ -348,12 +344,10 @@ const byId=id=>PRODUCTS.find(p=>p.id===id);
 const keyOf=(id,vi)=>id+'_'+vi;
 function parseKey(k){const i=k.lastIndexOf('_');const p=byId(k.slice(0,i));const vi=+k.slice(i+1);return {p,v:p.variants[vi],vi};}
 
-/* ---------- Delivery rate helper ---------- */
 function getDeliveryRate(state){
   return (state === PUNJAB_STATE) ? DELIVERY_RATE_PUNJAB : DELIVERY_RATE_OTHERS;
 }
 
-/* ---------- MRP / Sale helpers ---------- */
 function discountPct(mrp,sale){
   if(!mrp||mrp<=sale) return 0;
   return Math.round(((mrp-sale)/mrp)*100);
@@ -500,7 +494,7 @@ function renderAction(id){
 
 function imgFallback(el){el.onerror=null;el.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="100%" height="100%" fill="#e8f0e8"/><text x="50%" y="50%" font-size="42" text-anchor="middle" fill="#2d7a3e" font-family="serif">ibruHerb</text></svg>');}
 
-/* ============ CART (per size variant) ============ */
+/* ============ CART ============ */
 function add(id){const vi=selVar[id]||0,key=keyOf(id,vi);cart[key]=(cart[key]||0)+1;afterCart();toast(byId(id).name+' ('+byId(id).variants[vi].label+') added to cart');}
 function inc(key){cart[key]++;afterCart();}
 function dec(key){cart[key]--;if(cart[key]<=0)delete cart[key];afterCart();}
@@ -533,7 +527,7 @@ function renderCart(){
     <button class="btn green big" onclick="closeCart();show('checkout')">Proceed to Checkout →</button>`;
 }
 
-/* ============ TOTALS (with delivery charges based on state) ============ */
+/* ============ TOTALS ============ */
 function calcTotals(state){
   let subtotal=0,mrpTotal=0,weight=0;
   for(const k in cart){const {p,v}=parseKey(k);subtotal+=v.price*cart[k];mrpTotal+=v.mrp*cart[k];weight+=p.wt*cart[k];}
@@ -561,7 +555,7 @@ function summaryHTML(t, state){
   return h;
 }
 
-/* ============ ADDRESS BOOK (localStorage) ============ */
+/* ============ ADDRESS BOOK ============ */
 function saveAddresses(){
   localStorage.setItem('ih_addresses',JSON.stringify(addresses));
   if(selectedAddrId)localStorage.setItem('ih_last_addr',selectedAddrId);else localStorage.removeItem('ih_last_addr');
@@ -593,7 +587,7 @@ function delAddr(ev,id){
   saveAddresses();renderAddresses();toast('🗑️ Address removed');
 }
 
-/* ============ VIEWS + BACK BUTTON FIX ============ */
+/* ============ VIEWS ============ */
 function show(v,push=true){
   ['shop','checkout','payment','success'].forEach(x=>$('#view-'+x).classList.add('hidden'));
   $('#view-'+v).classList.remove('hidden');
@@ -643,12 +637,13 @@ function proceedPayment(){
     items:Object.keys(cart).map(k=>{const {p,v}=parseKey(k);return {p,v,q:cart[k]};})};
   buildPayment();show('payment');
 }
+
+/* UPDATED: Generates IBR-XXXXXXX format */
 function genOrderNo(){
-  const d=new Date(),p=n=>String(n).padStart(2,'0');
-  return `IH-${String(d.getFullYear()).slice(2)}${p(d.getMonth()+1)}${p(d.getDate())}-${Math.floor(1000+Math.random()*9000)}`;
+  return `IBR-${String(Math.floor(1000000 + Math.random() * 9000000))}`;
 }
 
-/* ============ PAYMENT (QR + UPI LINK + 30s) ============ */
+/* ============ PAYMENT ============ */
 function buildPayment(){
   const o=currentOrder;
   const upi=`upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent('ibruHerb')}&am=${o.total.toFixed(2)}&tn=${encodeURIComponent('Order '+o.no)}&cu=INR`;
@@ -671,32 +666,67 @@ function startCountdown(){
     else b.textContent=`⏳ Place Order in ${t}s`;},1000);
 }
 
-/* ============ ORDER MESSAGE BUILDER (for Telegram) ============ */
+/* ============ UPDATED: ORDER MESSAGE BUILDER FOR TELEGRAM ============ */
 function buildOrderMessage(o){
   const L=[];
-  const stateLabel = (o.state === PUNJAB_STATE) ? 'Punjab' : 'Other States';
-  L.push('🌿 *NEW ORDER — ibruHerb*');
-  L.push('🧾 Order No: *'+o.no+'*');
-  L.push('📅 '+new Date().toLocaleString('en-IN'));
-  L.push('','🛒 *Items:*');
-  o.items.forEach((it,i)=>{
-    const lineTotal=it.v.price*it.q;
-    const mrpLine=it.v.mrp*it.q;
-    const saved=mrpLine-lineTotal;
-    L.push(`${i+1}. ${it.p.name} [${it.p.cat}] (${it.v.label}) × ${it.q} = ${fmt(lineTotal)}${saved>0?` (MRP ${fmt(mrpLine)}, save ${fmt(saved)})`:''}`);
+  L.push('🌿 NEW ORDER - ibruherb 🌿');
+  L.push('');
+  L.push(`📋 Order No: ${o.no}`);
+  
+  // Format date like "23 Aug 2026, 11:30 am"
+  const now = new Date();
+  const dateStr = now.toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true });
+  L.push(`📅 Date: ${dateStr}`);
+  L.push('');
+  L.push('🛒 Items Ordered:');
+  
+  o.items.forEach((it, i) => {
+    const lineTotal = it.v.price * it.q;
+    const mrpLine = it.v.mrp * it.q;
+    const saved = mrpLine - lineTotal;
+    if (saved > 0) {
+      L.push(`${i+1}. ${it.p.name} (${it.v.label}) × ${it.q} = ${fmt(lineTotal)} (MRP ${fmt(mrpLine)}, save ${fmt(saved)})`);
+    } else {
+      L.push(`${i+1}. ${it.p.name} (${it.v.label}) × ${it.q} = ${fmt(lineTotal)}`);
+    }
   });
-  L.push('',`MRP Total: ${fmt(o.mrpTotal)}`,
-         `Sale Price Total: ${fmt(o.subtotal)}`,
-         o.mrpTotal>o.subtotal?`🎉 You Save: ${fmt(o.mrpTotal-o.subtotal)} (${Math.round(((o.mrpTotal-o.subtotal)/o.mrpTotal)*100)}% OFF)`:'',
-         `Total Weight: ${o.weight.toFixed(2)} kg (${o.kg} kg slab)`,
-         `🚚 Delivery (${stateLabel} @ ₹${o.rate}/kg × ${o.kg} kg): ${fmt(o.delivery)}`,
-         `💰 *Grand Total: ${fmt(o.total)}*`,'',
-         '📦 *Delivery Address:*',o.name,'📞 '+o.phone,o.addr,`${o.state} — ${o.pin}`,'',
-         `💳 Payment via UPI: ${UPI_ID}`,`📝 Note: ${o.no}`);
+  
+  L.push('');
+  L.push(`MRP Total: ${fmt(o.mrpTotal)}`);
+  L.push(`💰 Subtotal: ${fmt(o.subtotal)}`);
+  
+  if (o.mrpTotal > o.subtotal) {
+    const savePct = Math.round(((o.mrpTotal - o.subtotal) / o.mrpTotal) * 100);
+    L.push(`🎉 You Save: ${fmt(o.mrpTotal - o.subtotal)} (${savePct}% OFF)`);
+  }
+  
+  L.push(`⚖️ Total Weight: ${o.weight.toFixed(2)} kg (${o.kg} kg slab)`);
+  L.push(`🚚 Delivery Charge: ${fmt(o.delivery)}`);
+  L.push(`💵  Grand Total: ${fmt(o.total)}`);
+  L.push('');
+  L.push('📍 Delivery Address:');
+  L.push(`👤 ${o.name}`);
+  L.push(`📞 ${o.phone}`);
+  
+  // Smart split for address to match format
+  const addrParts = o.addr.split(',');
+  if (addrParts.length >= 2) {
+    L.push(`🏠 ${addrParts[0].trim()}`);
+    L.push(`🏙 ${addrParts.slice(1).join(',').trim()} - ${o.pin}`);
+  } else {
+    L.push(`🏠 ${o.addr}`);
+    L.push(`🏙 ${o.state} - ${o.pin}`);
+  }
+  L.push(`🗺 ${o.state}`);
+  L.push('');
+  L.push('📦 Store: ibruherb');
+  L.push('📍 Malerkotla, Punjab');
+  L.push('📞 +91 9888604059');
+  
   return L.join('\n');
 }
 
-/* ============ SEND ORDER TO TELEGRAM BOT ONLY ============ */
+/* ============ SEND ORDER TO TELEGRAM BOT ============ */
 function sendOrderToTelegram(o){
   if(!TG_CHAT_ID||TG_CHAT_ID==='PASTE_YOUR_CHAT_ID_HERE'){
     console.warn('Telegram alert skipped — TG_CHAT_ID not set yet.');
@@ -706,7 +736,11 @@ function sendOrderToTelegram(o){
   return fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:TG_CHAT_ID,text,parse_mode:'Markdown'})
+    body:JSON.stringify({
+      chat_id:TG_CHAT_ID,
+      text:text
+      // Removed parse_mode to ensure exact plain text & emoji rendering without Markdown interference
+    })
   })
   .then(r=>r.json())
   .then(data=>{
@@ -718,7 +752,7 @@ function sendOrderToTelegram(o){
   });
 }
 
-/* ============ PLACE ORDER → TELEGRAM ONLY ============ */
+/* ============ PLACE ORDER ============ */
 function placeOrder(){
   const o=currentOrder;
   const btn=$('#placeOrderBtn');
