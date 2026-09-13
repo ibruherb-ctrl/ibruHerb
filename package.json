@@ -1,0 +1,10 @@
+{
+  "name": "ibruherb",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ibruHerb — herbs & ayurvedic medicine storefront",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
